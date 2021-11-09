@@ -1,12 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  /* COLORS */
+  --color-background: #fff;
+  --color-text-primary: #030303;
+  --color-text-secondary: #fff;
+  --color-primary: #ab60b3;
+  --color-secondary: #6eccb425;
+  --color-contrast-primary: #69b3a0;
+  --color-contrast-secondary: #f5c971;
+
+  /* TYPOGRAPHY */
+  --font-text: overlock, cursive;
+
+  /* BORDER */
+  --border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
 }
