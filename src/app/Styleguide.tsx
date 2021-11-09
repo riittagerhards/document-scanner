@@ -47,6 +47,15 @@ function Styleguide() {
             borderRadius: '50%',
           }}
         />
+        <div
+          style={{
+            width: 40,
+            height: 40,
+            background: 'var(--color-background)',
+            borderRadius: '50%',
+            border: 'solid black 1px',
+          }}
+        />
       </div>
       <p
         style={{

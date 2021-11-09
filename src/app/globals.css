@@ -8,6 +8,7 @@
 
 :root {
   /* COLORS */
+  --color-background: #fff;
   --color-text-primary: #030303;
   --color-text-secondary: #fff;
   --color-primary: #ab60b3;
