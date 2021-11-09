@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.imageContainer {
+  background-color: var(--color-secondary);
+  width: 16rem;
+  height: 18.5rem;
+  border-radius: var(--border-radius);
+}
