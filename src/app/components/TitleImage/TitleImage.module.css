@@ -5,8 +5,15 @@
 }
 
 .imageContainer {
+  display: grid;
+  place-content: center;
   background-color: var(--color-secondary);
   width: 16rem;
   height: 18.5rem;
   border-radius: var(--border-radius);
+}
+
+.picture {
+  width: 12rem;
+  height: 15rem;
 }
