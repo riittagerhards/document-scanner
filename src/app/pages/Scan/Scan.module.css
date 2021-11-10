@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.scanButton {
+  display: grid;
+  place-content: center;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius);
+  border: none;
+  font-family: var(--font-text);
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  width: 16rem;
+  height: 2.5rem;
+}
+
+.link {
+  font-family: var(--font-text);
+  color: var(--color-contrast-secondary);
+}
+
+.image {
+  overflow: hidden;
+  object-fit: contain;
+  width: 90%;
+  height: 90%;
+}
