@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ImageInput from '../../components/ImageInput/ImageInput';
 import TitleImage from '../../components/TitleImage/TitleImage';
 import styles from './Scan.module.css';
-import Tesseract from 'tesseract.js';
+import { recognizeText } from '../../utils/ocr';
 
 function Scan() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -31,16 +31,13 @@ function Scan() {
         disabled={imageUrl === null}
         onClick={() => {
           if (imageUrl) {
-            Tesseract.recognize(imageUrl, 'eng', {
-              logger: (message) => console.log(message.progress),
-            }).then((result) => {
-              const text = result.data.text;
-              setRecognizedText(text);
-            });
+            recognizeText(imageUrl, ({ progress, status }) => {
+              console.log(progress, status);
+            }).then(setRecognizedText);
           }
         }}
       >
-        Scan image
+        Scan text
       </button>
       <a className={styles.link} href="#">
         Skip and go to documents
