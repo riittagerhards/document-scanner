@@ -8,18 +8,24 @@ function Scan() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [recognizedText, setRecognizedText] = useState<string | null>(null);
 
+  let content;
+
+  if (recognizedText) {
+    content = <p>{recognizedText}</p>;
+  } else if (imageUrl) {
+    content = <img src={imageUrl} className={styles.image} />;
+  } else {
+    content = (
+      <>
+        <TitleImage />
+        <ImageInput onUpload={setImageUrl} />
+      </>
+    );
+  }
+
   return (
     <div className={styles.container}>
-      {imageUrl ? (
-        <img src={imageUrl} className={styles.image} />
-      ) : (
-        <TitleImage />
-      )}
-      {recognizedText ? (
-        <p>{recognizedText}</p>
-      ) : (
-        <ImageInput onUpload={setImageUrl} />
-      )}
+      {content}
       <button
         className={styles.scanButton}
         disabled={imageUrl === null}
