@@ -24,3 +24,10 @@
   font-family: var(--font-text);
   color: var(--color-contrast-secondary);
 }
+
+.image {
+  overflow: hidden;
+  object-fit: contain;
+  width: 90%;
+  height: 90%;
+}

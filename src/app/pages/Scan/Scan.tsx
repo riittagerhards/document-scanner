@@ -8,10 +8,12 @@ function Scan() {
 
   return (
     <div className={styles.container}>
-      <div>{TitleImage()}</div>
-      <div>
-        <ImageInput onUpload={setImageUrl} />
-      </div>
+      {imageUrl ? (
+        <img src={imageUrl} className={styles.image} />
+      ) : (
+        <TitleImage />
+      )}
+      <ImageInput onUpload={setImageUrl} />
       <button className={styles.scanButton} disabled={imageUrl === null}>
         Scan
       </button>

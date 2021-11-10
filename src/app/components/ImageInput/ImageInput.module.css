@@ -13,8 +13,3 @@
 .defaultButton {
   display: none;
 }
-
-.image {
-  overflow: hidden;
-  object-fit: contain;
-}
