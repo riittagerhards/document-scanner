@@ -9,4 +9,4 @@ export default {
   },
 };
 
-export const Default = () => <AddDocumentForm />;
+export const Default = () => <AddDocumentForm text="" />;
