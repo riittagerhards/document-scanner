@@ -2,20 +2,19 @@ import React, { useState } from 'react';
 import ImageInput from '../../components/ImageInput/ImageInput';
 import TitleImage from '../../components/TitleImage/TitleImage';
 import styles from './Scan.module.css';
-import { recognizeText, RecognizeProgress } from '../../utils/ocr';
+//import { recognizeText, RecognizeProgress } from '../../utils/ocr';
 import Progress from '../../components/Progress/Progress';
 import AddDocumentForm from '../../components/AddDocumentForm/AddDocumentForm';
+import useRecognizeText from '../../utils/useRecognizeText';
 
 function Scan(): JSX.Element {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [recognizedText, setRecognizedText] = useState<string | null>(null);
-  const [recognizeProgress, setRecognizeProgress] =
-    useState<RecognizeProgress | null>(null);
+  const { text, progress, recognize } = useRecognizeText();
 
   let content;
 
-  if (recognizedText) {
-    content = <p>{recognizedText}</p>;
+  if (text) {
+    content = <p>{text}</p>;
   } else if (imageUrl) {
     content = <img src={imageUrl} className={styles.image} />;
   } else {
@@ -31,23 +30,19 @@ function Scan(): JSX.Element {
     <div className={styles.container}>
       {content}
 
-      {recognizedText && <AddDocumentForm text={recognizedText} />}
+      {text && <AddDocumentForm text={text} />}
 
-      {!recognizedText && recognizeProgress && (
-        <Progress
-          progress={recognizeProgress.progress * 100}
-          status={recognizeProgress.status}
-        />
+      {!text && progress && (
+        <Progress progress={progress.progress * 100} status={progress.status} />
       )}
-      {!recognizeProgress && (
+
+      {!progress && (
         <button
           className={styles.scanButton}
           disabled={imageUrl === null}
           onClick={() => {
             if (imageUrl) {
-              recognizeText(imageUrl, setRecognizeProgress).then(
-                setRecognizedText
-              );
+              recognize(imageUrl);
             }
           }}
         >
