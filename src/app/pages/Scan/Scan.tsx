@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ImageInput from '../../components/ImageInput/ImageInput';
 import TitleImage from '../../components/TitleImage/TitleImage';
 import styles from './Scan.module.css';
-//import { recognizeText, RecognizeProgress } from '../../utils/ocr';
 import Progress from '../../components/Progress/Progress';
 import AddDocumentForm from '../../components/AddDocumentForm/AddDocumentForm';
 import useRecognizeText from '../../utils/useRecognizeText';

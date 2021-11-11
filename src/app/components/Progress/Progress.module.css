@@ -4,21 +4,21 @@
   justify-items: center;
 }
 
-progress {
+.progress {
   --webkit-appearance: none;
 
   appearance: none;
-  width: 250px;
-  height: 20px;
+  width: 15rem;
+  height: 1.5rem;
 }
 
-progress::-webkit-progress-bar {
+.progress::-webkit-progress-bar {
   background-color: var(--color-background);
   border-radius: var(--border-radius);
   border: solid var(--color-contrast-primary) 1px;
 }
 
-progress::-webkit-progress-value {
+.progress::-webkit-progress-value {
   background-color: var(--color-contrast-primary);
   border-radius: var(--border-radius);
 }
