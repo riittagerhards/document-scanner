@@ -1,4 +1,21 @@
+.submitForm {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input {
+  font-family: var(--font-text);
+  border-radius: var(--border-radius);
+  width: 13rem;
+  height: 2.5rem;
+}
+
 .submitButton {
+  border: none;
   background-color: var(--color-primary);
   border-radius: var(--border-radius);
+  font-family: var(--font-text);
+  color: var(--color-text-secondary);
+  width: 3rem;
+  align-content: center;
 }

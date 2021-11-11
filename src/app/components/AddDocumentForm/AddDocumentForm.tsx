@@ -6,15 +6,16 @@ type AddDocumentFormProps = {
 };
 
 function AddDocumentForm({ text }: AddDocumentFormProps): JSX.Element {
-  const [name, setName] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
     const document = {
-      name,
+      name: title,
       text,
     };
+
     fetch('https://json-server.machens.dev/docs', {
       method: 'POST',
       headers: {
@@ -25,15 +26,15 @@ function AddDocumentForm({ text }: AddDocumentFormProps): JSX.Element {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.submitForm}>
       <input
         className={styles.input}
         type="text"
-        placeholder="enter name"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
+        placeholder="enter document title"
+        value={title}
+        onChange={(event) => setTitle(event.target.value)}
       />
-      <input className={styles.submitButton} type="submit" placeholder="save" />
+      <input className={styles.submitButton} type="submit" value="save" />
     </form>
   );
 }
