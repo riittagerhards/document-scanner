@@ -1,0 +1,4 @@
+.submitButton {
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius);
+}
