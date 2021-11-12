@@ -7,7 +7,7 @@ function Documents(): JSX.Element {
   return (
     <div className={styles.container}>
       <SearchBar />
-      <DocPreview title={'mein title'} text={'mein text'} />
+      <DocPreview />
     </div>
   );
 }
