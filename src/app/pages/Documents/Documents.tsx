@@ -18,12 +18,12 @@ function Documents(): JSX.Element {
   console.log(documents);
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.pageHeader}>
         <PageTitle header={'Documents'} />
         <SearchBar />
       </div>
-      <div className={styles.container}>
+      <div className={styles.cards}>
         {documents &&
           documents
             .slice(0, 10)

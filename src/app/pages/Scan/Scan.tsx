@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ImageInput from '../../components/ImageInput/ImageInput';
+import PageTitle from '../../components/PageTitle/PageTitle';
 import TitleImage from '../../components/TitleImage/TitleImage';
 import styles from './Scan.module.css';
 import Progress from '../../components/Progress/Progress';
@@ -13,12 +14,23 @@ function Scan(): JSX.Element {
   let content;
 
   if (text) {
-    content = <p>{text}</p>;
+    content = (
+      <>
+        <PageTitle header={'Doc Scanner'} />
+        <p>{text}</p>
+      </>
+    );
   } else if (imageUrl) {
-    content = <img src={imageUrl} className={styles.image} />;
+    content = (
+      <>
+        <PageTitle header={'Doc Scanner'} />
+        <img src={imageUrl} className={styles.image} />
+      </>
+    );
   } else {
     content = (
       <>
+        <PageTitle header={'Doc Scanner'} />
         <TitleImage />
         <ImageInput onUpload={setImageUrl} />
       </>

@@ -1,13 +1,9 @@
-.card {
-  display: grid;
-  row-gap: 0.5rem;
-}
-
 .container {
   background-color: var(--color-secondary);
   border-radius: var(--border-radius);
   margin: 0.5rem;
   padding: 0.5rem;
+  width: 75vw;
 }
 
 .text {
@@ -18,6 +14,6 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   padding-left: 1em;
-  width: 10rem;
+  width: 70vw;
   font-size: 0.8rem;
 }

@@ -1,3 +1,29 @@
 .container {
-  background-color: var(--color-background);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  place-content: center;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius);
+  font-family: var(--font-text);
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  width: 16rem;
+  height: 2.5rem;
+  margin: 1rem;
+}
+
+.textInput {
+  height: 1.8rem;
+  width: 13rem;
+  margin: 0.2rem 0.2rem 0.2rem 0.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+}
+
+.button {
+  display: none;
+}
+
+.icon {
+  margin: 0.5rem;
 }

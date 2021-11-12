@@ -11,7 +11,7 @@ function DocPreview({ title, text }: Document): JSX.Element {
   return (
     <div className={styles.card}>
       <article className={styles.container}>
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <p className={styles.text}>{text}</p>
       </article>
     </div>
