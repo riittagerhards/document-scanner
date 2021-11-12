@@ -14,10 +14,6 @@ function DocPreview({ title, text }: Document): JSX.Element {
         <h3>{title}</h3>
         <p className={styles.text}>{text}</p>
       </article>
-      <article className={styles.container}>
-        <h3>{title}</h3>
-        <p className={styles.text}>{text}</p>
-      </article>
     </div>
   );
 }

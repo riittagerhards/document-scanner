@@ -8,7 +8,16 @@
   border-radius: var(--border-radius);
   margin: 0.5rem;
   padding: 0.5rem;
+}
+
+.text {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /* stylelint-disable */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-left: 1em;
+  width: 10rem;
+  font-size: 0.8rem;
 }

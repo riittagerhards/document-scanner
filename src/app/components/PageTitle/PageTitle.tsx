@@ -1,6 +1,6 @@
 import React from 'react';
 
-type pageTitleProps = {
+export type pageTitleProps = {
   header: string;
 };
 
