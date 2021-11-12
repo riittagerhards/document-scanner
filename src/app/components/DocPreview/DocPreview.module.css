@@ -1,4 +1,14 @@
-.container {
+.card {
   display: grid;
+  row-gap: 0.5rem;
+}
+
+.container {
   background-color: var(--color-secondary);
+  border-radius: var(--border-radius);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
