@@ -9,4 +9,4 @@ export default {
   },
 };
 
-export const Default = () => <SearchBar />;
+export const Default = () => <SearchBar onSearch={alert} />;
