@@ -22,7 +22,7 @@ function Documents(): JSX.Element {
         <PageTitle header={'Documents'} />
         <SearchBar />
       </div>
-      <div className={styles.cards}>
+      <div>
         {documents?.slice(0, 5).map((document) => (
           <DocPreview
             title={document.title}
