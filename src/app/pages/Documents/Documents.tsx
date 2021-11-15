@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Documents.module.css';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import getDocuments from '../../components/DocPreview/GetDocuments';
+import getDocuments from '../../utils/GetDocuments';
 import DocPreview, { Document } from '../../components/DocPreview/DocPreview';
 
 function Documents(): JSX.Element {
@@ -15,7 +15,6 @@ function Documents(): JSX.Element {
     }
     load();
   }, []);
-  console.log(documents);
 
   return (
     <div className={styles.container}>
@@ -24,16 +23,13 @@ function Documents(): JSX.Element {
         <SearchBar />
       </div>
       <div className={styles.cards}>
-        {documents &&
-          documents
-            .slice(0, 10)
-            .map((document) => (
-              <DocPreview
-                title={document.title}
-                text={document.text}
-                key={document.id}
-              />
-            ))}
+        {documents?.slice(0, 5).map((document) => (
+          <DocPreview
+            title={document.title}
+            text={document.text}
+            key={document.id}
+          />
+        ))}
       </div>
     </div>
   );
