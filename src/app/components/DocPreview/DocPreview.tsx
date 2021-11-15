@@ -10,7 +10,7 @@ export type Document = {
 function DocPreview({ title, text }: Document): JSX.Element {
   const [collapsed, setCollapsed] = useState(true);
 
-  if (!text || text.length <= 30) {
+  if (!text || text.length <= 40) {
     return (
       <article className={styles.container}>
         <h4>{title}</h4>
@@ -22,9 +22,12 @@ function DocPreview({ title, text }: Document): JSX.Element {
       <article className={styles.container}>
         <h4>{title}</h4>
         <p className={styles.text}>
-          {collapsed ? `${text.substring(0, 30)}...` : text}
-          <button onClick={() => setCollapsed(!collapsed)}>
-            Read {collapsed ? 'more' : 'less'}
+          {collapsed ? `${text.substring(0, 40)}...` : text}
+          <button
+            className={styles.button}
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            read {collapsed ? 'more' : 'less'}
           </button>
         </p>
       </article>
