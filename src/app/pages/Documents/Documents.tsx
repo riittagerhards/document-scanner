@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './Documents.module.css';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import getDocuments from '../../utils/GetDocuments';
-import DocPreview, { Document } from '../../components/DocPreview/DocPreview';
+import DocPreview from '../../components/DocPreview/DocPreview';
 
 function Documents(): JSX.Element {
-  const [documents, setDocuments] = useState<null | Document[]>(null);
-
-  useEffect(() => {
-    async function load() {
-      const newDocuments = await getDocuments();
-      setDocuments(newDocuments);
-    }
-    load();
-  }, []);
+  const documents = getDocuments();
 
   return (
     <div className={styles.container}>
