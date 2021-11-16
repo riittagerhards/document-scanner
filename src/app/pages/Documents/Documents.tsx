@@ -20,7 +20,9 @@ function Documents(): JSX.Element {
         <SearchBar onSearch={setSearch} />
       </div>
       <div>
-        {filteredDocuments?.slice(0, 5).map((document) => (
+        {!filteredDocuments && <span>...loading...</span>}
+        {filteredDocuments?.length === 0 && <span>no documents</span>}
+        {filteredDocuments?.map((document) => (
           <DocPreview
             title={document.title}
             text={document.text}

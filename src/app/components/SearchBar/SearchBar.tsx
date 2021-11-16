@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SearchBar.module.css';
 import SearchIcon from './SearchIcon.svg';
 
@@ -7,15 +7,26 @@ type OnSearchProps = {
 };
 
 function SearchBar({ onSearch }: OnSearchProps): JSX.Element {
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      onSearch(value);
+    }, 300);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [value]);
+
   return (
     <div className={styles.container}>
       <input
         type="text"
         placeholder="search"
         className={styles.textInput}
+        value={value}
         onChange={(event) => {
-          event.preventDefault();
-          onSearch(event.target.value);
+          setValue(event.target.value);
         }}
       ></input>
       <button className={styles.button}>x</button>
