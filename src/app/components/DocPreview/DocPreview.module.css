@@ -1,0 +1,25 @@
+.container {
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 75vw;
+  text-align: center;
+}
+
+.text {
+  padding-left: 1em;
+  width: 70vw;
+  font-size: 0.8rem;
+}
+
+.button {
+  background-color: var(--color-contrast-primary);
+  border-radius: var(--border-radius);
+  font-family: var(--font-text);
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  border: none;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
