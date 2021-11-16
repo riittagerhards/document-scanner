@@ -6,6 +6,7 @@ import styles from './Scan.module.css';
 import Progress from '../../components/Progress/Progress';
 import AddDocumentForm from '../../components/AddDocumentForm/AddDocumentForm';
 import useRecognizeText from '../../utils/useRecognizeText';
+import { Link } from 'react-router-dom';
 
 function Scan(): JSX.Element {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -60,9 +61,9 @@ function Scan(): JSX.Element {
           Scan text
         </button>
       )}
-      <a className={styles.link} href="#">
+      <Link className={styles.link} to="/documents">
         Skip and go to documents
-      </a>
+      </Link>
     </div>
   );
 }

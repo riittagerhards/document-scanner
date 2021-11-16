@@ -4,6 +4,7 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import getDocuments from '../../utils/GetDocuments';
 import DocPreview from '../../components/DocPreview/DocPreview';
+import { Link } from 'react-router-dom';
 
 function Documents(): JSX.Element {
   const [search, setSearch] = useState('');
@@ -30,6 +31,9 @@ function Documents(): JSX.Element {
           />
         ))}
       </div>
+      <Link className={styles.link} to="/">
+        Home
+      </Link>
     </div>
   );
 }
