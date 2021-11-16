@@ -1,7 +1,8 @@
 import React from 'react';
+import Scan from './pages/Scan/Scan';
 
 function App(): JSX.Element {
-  return <main>Hello</main>;
+  return <Scan />;
 }
 
 export default App;
